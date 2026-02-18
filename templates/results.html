@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matched Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="results-title">
+        <h1>🎯 Top AI Matched Jobs</h1>
+        <p>Showing best matches based on your skills</p>
+    </div>
+
+    {% if jobs and jobs|length > 0 %}
+        
+        {% for job in jobs[:10] %}
+        <div class="job-card">
+            <div class="job-title">
+                {{ loop.index }}. {{ job.get('title', 'N/A') }}
+            </div>
+
+            <div class="job-info">
+                🏢 <strong>Company:</strong> {{ job.get('company', 'N/A') }}
+            </div>
+
+            <div class="job-info">
+                📍 <strong>Location:</strong> {{ job.get('location', 'N/A') }}
+            </div>
+
+            <div class="job-info score">
+                🧠 Match Score: {{ "%.3f"|format(job.get('score', 0)) }}
+            </div>
+
+            <a class="job-link" href="{{ job.get('link', '#') }}" target="_blank">
+                🔗 View Job Posting
+            </a>
+        </div>
+        {% endfor %}
+
+    {% else %}
+        <div class="job-card">
+            <h2>No matched jobs found 😔</h2>
+            <p>Try different skills or location.</p>
+        </div>
+    {% endif %}
+
+    <a href="/" class="back-btn">⬅ Back to Search</a>
+
+</div>
+
+</body>
+</html>

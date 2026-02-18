@@ -1,0 +1,150 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #38bdf8;
+}
+
+.header p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* Form Card */
+.form-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0f172a;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Results Page */
+.results-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Job Card */
+.job-card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    border: 1px solid #334155;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.job-title {
+    font-size: 1.4rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.job-info {
+    margin-bottom: 8px;
+    color: #cbd5f5;
+}
+
+.score {
+    font-weight: bold;
+    color: #22c55e;
+}
+
+/* Link Button */
+.job-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.job-link:hover {
+    background: #4f46e5;
+}
+
+/* Back Button */
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
