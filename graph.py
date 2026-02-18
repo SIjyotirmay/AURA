@@ -8,12 +8,14 @@ class SearchState(TypedDict):
     scored_jobs: list[dict]
 
 def User_input(state: SearchState):
-    name = input("Enter your name: ")
-    skills_input = input("Enter skills (comma separated): ")
-    preferred_role = input("Enter preferred role: ")
-    location = input("Enter preferred location: ")
+    user_profile = state.get("user_profile", {})
+    name = user_profile.get("name", "")
+    skills = user_profile.get("skills", [])
+    preferred_role = user_profile.get("preferred_role", "")
+    location = user_profile.get("location", "")
 
-    skills = [skill.strip() for skill in skills_input.split(",")]
+    if isinstance(skills, str):
+        skills = [skill.strip() for skill in skills.split(",")]
 
     state["user_profile"] = {
         "name": name,
@@ -23,6 +25,7 @@ def User_input(state: SearchState):
     }
 
     return state
+
 
 
 def Query_builder(state: SearchState):
